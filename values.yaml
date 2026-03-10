@@ -1,0 +1,14 @@
+grafana:
+ adminPassword: devadmin
+ service:
+   type: ClusterIP
+
+prometheus:
+ prometheusSpec:
+   retention: 7d
+   grafana:
+  additionalDataSources:
+    - name: Loki
+      type: loki
+      isDefault: false
+
